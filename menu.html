@@ -98,20 +98,54 @@ document.querySelectorAll('a.nav-link').forEach(link => {
         console.log(`Active Tab: ${event.target.getAttribute('aria-controls')}`);
     });
 </script>
-
 <!-- Menu Section Start -->
 <div class="container py-5">
     <div class="section-title">
         <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Menu & Pricing</h4>
         <h1 class="display-4">Competitive Pricing</h1>
     </div>
-    <div class="nav nav-tabs justify-content-center mb-4" id="menuTabs" role="tablist">
-        <button class="nav-link active" id="tab-1-tab" data-bs-toggle="tab" data-bs-target="#tab-1" type="button" role="tab" aria-controls="tab-1" aria-selected="true">Category 1</button>
-        <button class="nav-link" id="tab-2-tab" data-bs-toggle="tab" data-bs-target="#tab-2" type="button" role="tab" aria-controls="tab-2" aria-selected="false">Category 2</button>
-        <button class="nav-link" id="tab-3-tab" data-bs-toggle="tab" data-bs-target="#tab-3" type="button" role="tab" aria-controls="tab-3" aria-selected="false">Category 3</button>
-        <button class="nav-link" id="tab-4-tab" data-bs-toggle="tab" data-bs-target="#tab-4" type="button" role="tab" aria-controls="tab-4" aria-selected="false">Category 4</button>
-        <button class="nav-link" id="tab-5-tab" data-bs-toggle="tab" data-bs-target="#tab-5" type="button" role="tab" aria-controls="tab-5" aria-selected="false">Category 5</button>
+    
+    <div class="nav nav-tabs justify-content-center mb-4" id="menuTabs" role="tablist" style="padding: 20px;">
+        <button class="nav-link active rounded-pill px-4 py-2 text-white bg-primary border-0 me-2 " style="margin: 5px;"
+                id="tab-1-tab" data-bs-toggle="tab" data-bs-target="#tab-1" 
+                type="button" role="tab" aria-controls="tab-1" aria-selected="true">
+            Category 1
+        </button>
+        <button class="nav-link rounded-pill px-4 py-2 text-primary bg-light border border-primary me-2" style="margin: 5px;"
+                id="tab-2-tab" data-bs-toggle="tab" data-bs-target="#tab-2" 
+                type="button" role="tab" aria-controls="tab-2" aria-selected="false">
+            Category 2
+        </button>
+        <button class="nav-link rounded-pill px-4 py-2 text-primary bg-light border border-primary me-2" style="margin: 5px;"
+                id="tab-3-tab" data-bs-toggle="tab" data-bs-target="#tab-3" 
+                type="button" role="tab" aria-controls="tab-3" aria-selected="false">
+            Category 3
+        </button>
+        <button class="nav-link rounded-pill px-4 py-2 text-primary bg-light border border-primary" style="margin: 5px;"
+                id="tab-4-tab" data-bs-toggle="tab" data-bs-target="#tab-4" 
+                type="button" role="tab" aria-controls="tab-4" aria-selected="false">
+            Category 4
+        </button>
     </div>
+    
+    
+
+    <script>
+        document.querySelectorAll('#menuTabs .nav-link').forEach((tab) => {
+            tab.addEventListener('click', function () {
+                // Remove 'active' from all tabs
+                document.querySelectorAll('#menuTabs .nav-link').forEach((item) => {
+                    item.classList.remove('active', 'text-white', 'bg-primary', 'border-0');
+                    item.classList.add('text-primary', 'bg-light', 'border-primary');
+                });
+                // Add 'active' to the clicked tab
+                this.classList.add('active', 'text-white', 'bg-primary', 'border-0');
+                this.classList.remove('text-primary', 'bg-light', 'border-primary');
+            });
+        });
+    </script>
+    
+    
     <div class="tab-content" id="menuTabContent">
         <!-- Tab 1 Content -->
         <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1-tab">
@@ -327,7 +361,7 @@ document.querySelectorAll('a.nav-link').forEach(link => {
             </div>
         </div>
         <!-- Tab 3 Content -->
-        <div class="tab-pane fade" id="tab-4" role="tabpanel" aria-labelledby="tab-3-tab">
+        <div class="tab-pane fade" id="tab-4" role="tabpanel" aria-labelledby="tab-4-tab">
             <div class="row">
                 <div class="col-lg-6">
                     <h1 class="mb-5">Hot Coffee</h1>
@@ -398,78 +432,6 @@ document.querySelectorAll('a.nav-link').forEach(link => {
             </div>
         </div>
         <!-- Tab 3 Content -->
-        <div class="tab-pane fade" id="tab-5" role="tabpanel" aria-labelledby="tab-3-tab">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="mb-5">Hot Coffee</h1>
-                    <div class="row align-items-center mb-5">
-                        <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="">
-                            <h5 class="menu-price">$5</h5>
-                        </div>
-                        <div class="col-8 col-sm-9">
-                            <h4>Black Coffee</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
-                        </div>
-                    </div>
-                    <div class="row align-items-center mb-5">
-                        <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="">
-                            <h5 class="menu-price">$7</h5>
-                        </div>
-                        <div class="col-8 col-sm-9">
-                            <h4>Chocolete Coffee</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
-                        </div>
-                    </div>
-                    <div class="row align-items-center mb-5">
-                        <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="">
-                            <h5 class="menu-price">$9</h5>
-                        </div>
-                        <div class="col-8 col-sm-9">
-                            <h4>Coffee With Milk</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h1 class="mb-5">Cold Coffee</h1>
-                    <div class="row align-items-center mb-5">
-                        <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="">
-                            <h5 class="menu-price">$5</h5>
-                        </div>
-                        <div class="col-8 col-sm-9">
-                            <h4>Black Coffee</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
-                        </div>
-                    </div>
-                    <div class="row align-items-center mb-5">
-                        <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="">
-                            <h5 class="menu-price">$7</h5>
-                        </div>
-                        <div class="col-8 col-sm-9">
-                            <h4>Chocolete Coffee</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
-                        </div>
-                    </div>
-                    <div class="row align-items-center mb-5">
-                        <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="">
-                            <h5 class="menu-price">$9</h5>
-                        </div>
-                        <div class="col-8 col-sm-9">
-                            <h4>Coffee With Milk</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Menu Section End -->
 
 

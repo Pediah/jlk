@@ -1,0 +1,10 @@
+menu 
+
+check out will work as follows.
+
+add items to cart
+Order ID will be added. with the items.
+
+dashboard will auto update. Run Crons.
+
+buttons completed order. Notifying user that order is ready for collection.
